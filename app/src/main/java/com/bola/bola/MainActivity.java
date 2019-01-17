@@ -12,11 +12,14 @@ import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
     SensorManager sensorMgr;
     Sensor sensor;
     ImageView img;
+    ArrayList arrayList;
 
     // Control de la velocitat
     float velocitat = 2.0f;
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         sensorMgr = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorMgr.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorMgr.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
+
 
     }
 
